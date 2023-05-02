@@ -1,0 +1,15 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="{i18n>Centros}"
+		items="{mF4Centros>/Centros}"
+		liveChange="onLiveChangeCentro"
+		search="onLiveChangeCentro"
+		confirm="_handleValueHelpClose"
+		cancel="_handleValueHelpClose">
+		<StandardListItem
+			title="{mF4Centros>Werks}"
+			description="{mF4Centros>Name1}"/>
+	</SelectDialog>
+</core:FragmentDefinition>

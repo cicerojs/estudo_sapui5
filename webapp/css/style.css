@@ -1,0 +1,461 @@
+.appBody{
+	overflow-y: auto; 
+	height:100%;
+}
+
+.sapMITBContent{
+	border-bottom: 0 !important;
+}
+
+.spacerText {
+    padding: 2rem;
+}
+
+.attributesOnPanel .sapMOH {
+	padding: 0 !important;
+	margin : 0 !important;
+}
+
+.sapMOH, 
+.cabecalho {
+	padding-bottom: 0 !important;
+}
+
+.attributesOnPanel .sapMPanelContent {
+	border-bottom: 0 !important;
+}
+
+.sap-desktop {
+	overflow: hidden !important;
+}
+
+body {
+	overflow: hidden !important;
+}
+
+#linkDetalhes {
+	padding-top: 1rem;
+}
+
+.divQRCode {
+	padding-top: 1rem;
+	width: 100%;
+	min-width: 100%;
+
+	display: -ms-flex;
+	display: -webkit-flex;
+	display: flex;
+
+	-ms-justify-content: center;
+	-webkit-justify-content: center;
+	justify-content: center;	
+}
+
+.imagemAcao .sapMImg {
+	width  : 24px !important;
+	padding:  7px !important;
+}
+
+.sapMOHTitleDiv,
+.sapMOHNumberWrap {
+	width: auto;
+}
+
+.sapMOHNumber {
+	font-size: 1.5rem;
+}
+
+.sapMObjLNumber {
+	font-size: 1.2rem;
+}
+
+.sap-phone .sapMOH {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.labelICJ .sapMObjLNumber,
+.labelICJ .sapMOHNumberDiv .sapMObjectNumberText {
+    font-size: 1.15rem;
+}
+
+.sapMOHNumberUnit {
+	margin-top: 0.1rem;
+}
+
+.sapMITBFilter .sapMITBText {
+    width: auto;
+}
+
+.listaComoDetalhe .sapMLIB {
+    border-bottom: none;
+    background-color: transparent !important;
+    padding: 0;
+}
+
+.listaComoDetalhe .sapMObjLTopRow {
+    display: none;
+}
+
+.imageAbout {
+	display: block;
+	margin: auto;
+	margin-top: 20px;
+	padding: 0.5em !important;
+}
+
+.imagemCabecalhoPetrobras {
+	margin: 0 !important;
+	padding: 0.4em !important;
+	visibility: visible;
+	width: 8em;
+}
+
+.logoCabecalhoPetrobras {
+	visibility: hidden;
+	width: 0px;
+}
+
+.textoCarrossel {
+	vertical-align: top;
+}
+
+.textoInformativoComImagem {
+	max-height: 23em;
+	overflow: auto;
+	background-color: #ffffff;
+}
+
+.gridSemPadding .sapUiFormResLayout>div {
+	padding: 0px !important;
+}
+
+.gridSemPadding.sapUiRespGrid.sapUiRespGridVSpace1>div {
+    margin-bottom: .2rem !important;
+}
+
+.sapMObjStatusWarning>.sapMObjStatusText,
+.sapMObjStatusWarning>.sapMObjStatusIcon {
+    color: #F0AB00;
+}
+
+.listaSemBorda.sapUiPopupWithPadding .sapMDialogScrollCont {
+	padding: 0 !important;
+}
+
+.atencao {
+    color: red !important;
+    font-weight: bold !important;
+    width: 100%;
+}
+
+.sapMTitle.inicio {
+	white-space: normal;
+	text-overflow: unset;
+}
+
+/***********************************************\
+ I M A G E N S   R O D A P E
+\***********************************************/
+
+.imagemRodapeInicio,
+.imagemRodapeInformativo {
+    background-image: url(../img/informativo/rodape-02.png);
+    background-size: 20%;
+    background-repeat: no-repeat;
+    background-position: 101% 101%;
+    background-color: #ffffff;
+}
+
+@media screen and (max-width:960px) {
+	.imagemRodapeInicio,
+	.imagemRodapeInformativo {
+	    background-size: 35%;
+	}
+}
+
+@media screen and (max-width:600px) {
+	.imagemRodapeInicio,
+	.imagemRodapeInformativo {
+	    background-size: 45%;
+	}
+
+	.imagemCabecalhoPetrobras {
+		visibility: hidden;
+		width: 0px;
+	}
+	
+	.logoCabecalhoPetrobras {
+		margin: 0 !important;
+		padding: 0.4em !important;
+		visibility: visible;
+		width: 1.8em;
+	}
+	
+}
+
+@media screen and (max-width:320px) {
+	.imagemRodapeInicio,
+	.imagemRodapeInformativo {
+	    background-size: 55%;
+	}
+}
+
+/***********************************************\
+ C A R T Õ E S
+\***********************************************/
+
+.sapMTile {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    background-color: #f7f7f7;
+    -webkit-transition-property: none !important;
+       -moz-transition-property: none !important;
+            transition-property: none !important;
+}
+
+
+/***********************************************\
+ C O N T A D O R E S
+\***********************************************/
+
+.listaPrincipal .sapMLIBCounter {
+	font-weight: bold;
+}
+
+.inativo .sapMSLIInfoWarning,
+.inativo .sapMSLITitleOnly,
+.inativo .sapMSLIInfoNone,
+.inativo .sapMSLIImgIcon,
+.inativo .sapMSLIImgFirstIcon {
+	opacity: 0.5;
+}
+
+
+/***********************************************\
+ T A B S  -  A B A S   D E   S E L E C A O
+\***********************************************/
+
+.sapMITBTab {
+    min-width: 5rem;
+    width: 100% !important;
+}
+
+
+/***********************************************\
+ S P L A S H   S C R E E N   N O   C O R D O V A
+\***********************************************/
+
+#splash-screen {
+	position: absolute;
+	top:      0;
+	left:     0;
+	right:    0;
+	bottom:   0;
+	overflow: hidden;
+	background-color:    #ffffff !important;
+
+    background-image: url(../img/informativo/rodape-02.png);
+    background-size: 25% !important;
+    background-repeat: no-repeat;
+    background-position: 101% 101% !important;
+
+}
+	
+@media screen and (max-width:960px) {
+	#splash-screen {
+	    background-size: 35% !important;
+	}
+}
+
+@media screen and (max-width:600px) {
+	#splash-screen {
+	    background-size: 45% !important;
+	}
+}
+
+@media screen and (max-width:320px) {
+	#splash-screen {
+	    background-size: 55% !important;
+	}
+}
+
+
+@keyframes spinoffPulse {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+
+@-moz-keyframes spinoffPulse {
+	0% {
+		-moz-transform: rotate(0deg);
+	}
+	100% {
+		-moz-transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes spinoffPulse {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@media screen and (orientation: portrait) {
+	.content {
+		width: 100%;
+		height: 100%;
+	}
+
+	#splash-screen {
+		position: absolute;
+		top:      0;
+		left:     0;
+		right:    0;
+		bottom:   0;
+		overflow: hidden;
+	}
+	
+	#splash-screen > * {
+		cursor:   default;
+		position: absolute;
+		top:      50%;
+		left:     50%;
+		box-sizing:         border-box;
+		-ms-box-sizing:     border-box;
+		-moz-box-sizing:    border-box;
+		-webkit-box-sizing: border-box;
+		user-select:         none;
+		-o-user-select:      none;
+		-ms-user-select:     none;
+		-moz-user-select:    -moz-none;
+		-webkit-user-select: none;
+	}
+	
+	.splash-screen-circle-inner {
+		opacity: 1;
+		z-index: 20001;
+		width:         60px;
+		height:        60px;
+		margin-top:   -30px;
+		margin-left:  -30px;
+		border-radius: 50%;
+		border:        11px solid #009de0;
+		border-right:  11px solid transparent;
+		background-color:  transparent;
+		animation:         spinoffPulse 1s infinite linear;
+		-moz-animation:    spinoffPulse 1s infinite linear;
+		-webkit-animation: spinoffPulse 1s infinite linear;
+	}
+}
+
+@media screen and (orientation: landscape) {
+	.content {
+		width: 100%;
+		height: 100%;
+	}
+
+	#splash-screen {
+		position: absolute;
+		top:      0;
+		left:     0;
+		right:    0;
+		bottom:   0;
+		overflow: hidden;
+	}
+	
+	#splash-screen > * {
+		cursor:   default;
+		position: absolute;
+		top:      50%;
+		left:     50%;
+		box-sizing:         border-box;
+		-ms-box-sizing:     border-box;
+		-moz-box-sizing:    border-box;
+		-webkit-box-sizing: border-box;
+		user-select:         none;
+		-o-user-select:      none;
+		-ms-user-select:     none;
+		-moz-user-select:    -moz-none;
+		-webkit-user-select: none;
+	}
+	
+	.splash-screen-circle-inner {
+		opacity: 1;
+		z-index: 20001;
+		width:         60px;
+		height:        60px;
+		margin-top:   -30px;
+		margin-left:  -30px;
+		border-radius: 50%;
+		border:        11px solid #009de0;
+		border-right:  11px solid transparent;
+		background-color:  transparent;
+		animation:         spinoffPulse 1s infinite linear;
+		-moz-animation:    spinoffPulse 1s infinite linear;
+		-webkit-animation: spinoffPulse 1s infinite linear;
+	}
+}
+
+
+
+/***********************************************\
+ S E L E C T   P A R A   R O D A P E
+\***********************************************/
+
+
+/* Fundo do campo */
+.sapMFooterActions.sapMSlt {
+    background: transparent !important;
+	border: none;
+}
+ 
+/* Texto do campo*/
+.sapMFooterActions.sapMSlt>.sapMSltLabel {
+	color: #efefef;
+}
+ 
+/* Borda do campo */
+.sapMFooter-CTX .sapMFooterActions.sapMSlt {
+	border-color: #cfcfcf;
+}
+ 
+/* Fundo do botao do select */
+.sapMFooterActions .sapMSltArrow {
+ 	background: transparent;
+	color: #efefef;
+}
+
+.sapMFooterActions.sapMSltHoverable:not(.sapMSltPressed):hover>.sapMSltArrow {
+    background: #e0e0e0;
+	color: #676767;
+}
+
+.sapMFooterActions.sapMSltPressed>.sapMSltArrow {
+    background: #007cc0;
+}
+
+.sapMFooterActions.sapMSltPressed>.sapMSltArrow::before {
+    color: #ffffff;
+}
+
+/******************************\
+ FacetFilter into Table 
+\******************************/
+
+.tableWithFacetFilter .sapMFFHead {
+	margin-right : 3.5rem;
+}
+
+.tableWithFacetFilter .sapMFFResetDiv {
+	right : 0rem !important;
+}

@@ -1,0 +1,212 @@
+<mvc:View 
+	controllerName="br.com.petrobras.pm.yspm_medidas_b.controller.Object"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:layout="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" >
+	<Page
+		id="page"
+		title="{i18n>worklistTitle}"
+		showNavButton="true"
+		showFooter="true"
+		navButtonPress="onNavBack"
+		busy="{objectView>/busy}"
+		busyIndicatorDelay="{objectView>/delay}">
+		
+		<ObjectHeader
+				responsive="true"
+				fullScreenOptimized="true"
+				title="{path: 'Nota',
+						formatter:'.formatter.formataZerosEsquerda'}"
+				backgroundDesign="Solid">
+				<attributes>
+					<ObjectAttribute title="{i18n>Parte}" text="{Item} - {CodPartObj}" />
+					<ObjectAttribute title="{i18n>RTI}" text="{NumMedida}" />
+					<ObjectAttribute title="{i18n>Classificacao}" text="{YyclassifRti}" />
+					<ObjectAttribute title="{i18n>FalhaTipoIntervAbr}"
+									 text="{path: 'YyimpactoFalhaNota',
+										    formatter: '.formatter.formataNA'} / {YytipoIntervNota}" />
+					<ObjectAttribute title="{i18n>DtCriacao}"
+									 text="{path: 'Erdat',
+									        type: 'sap.ui.model.type.Date',
+											formatOptions: {
+				        				 		pattern: 'dd/MM/yyyy'
+				        						}
+			        						}" />
+					<ObjectAttribute title="{i18n>NovoPrazoMoni}"
+									 text="{path: 'NovoPrazoMoni',
+											type: 'sap.ui.model.type.Date',
+											formatOptions: {
+												pattern: 'dd/MM/yyyy'
+												}
+											}" />
+				</attributes>
+				<statuses>
+					<ObjectStatus title="{i18n>Status}" text="{NivelAprovacao}" state="Warning" />
+				</statuses>
+			</ObjectHeader>
+		<IconTabBar
+			id="iconTabBar"
+			expandable="false"
+			class="sapUiSmallMarginBottom sapUiResponsiveContentPadding">
+		<items>
+			<IconTabFilter
+				text="{i18n>DetalheMedida}"
+				key="kDetalheMedida"
+				id="vDetalheMedida">
+				<f:Form 
+					id="formDetalheMedida"
+					editable="false">
+					<!--f:title>
+						<core:Title text="{i18n>DetalheMedida}" />
+					</f:title-->
+					<f:layout>
+						<f:ResponsiveGridLayout
+							adjustLabelSpan="false"
+							singleContainerFullSize="false"
+							labelSpanXL="4"	labelSpanL="3" labelSpanM="8" labelSpanS="12"
+							emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0"
+							columnsXL="1"   columnsL="1"   columnsM="1"   />
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>	
+							<f:formElements>
+								<f:FormElement label="{i18n>TextoBrvRti}">
+									<f:fields>
+										<Text text="{TxtMedida}"/>
+									</f:fields>
+								</f:FormElement>
+								
+								<f:FormElement label="{i18n>Ordem}">
+									<f:fields>
+										<Text text="{Yyaufnr}"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="{i18n>StatusUsr}">
+									<f:fields>
+										<Text text="{StatusDesc}" />
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="{i18n>StatusSist}">
+									<f:fields>
+										<Text text="{StatusSap}" />
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="{i18n>Responsavel}">
+									<f:fields>
+										<Text text="{Parnr}"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="{i18n>ResponsavelDesc}">
+									<f:fields>
+										<Text text="{ResponsavelResp}"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="{i18n>LocalCod}">
+									<f:fields>
+										<Text text="{LocalizacaoCod}"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="{i18n>LocalDesc}">
+									<f:fields>
+										<Text text="{LocalizacaoDesc}"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="{i18n>ParteCatCod}">
+									<f:fields>
+										<Text text="{GrpCodCat}" />
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="{i18n>PartObjCod}">
+									<f:fields>
+										<Text text="{CodPartObj}"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="{i18n>PartObjDesc}">
+									<f:fields>
+										<Text text="{TxtBreveCod}"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="{i18n>GrpCodMedida}">
+									<f:fields>
+										<Text text="{GrpCodMedida} - {TipoCatParte} {TxtBreveMedida}"   />
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="{i18n>DtInicioPlan}">
+									<f:fields>
+										<Text text="{path:'Pster', formatter:'.formatter.formataData'} - {path:'Pstur', formatter:'.formatter.formataHora'}" />
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="{i18n>DtFimPlan}">
+									<f:fields>
+										<Text text="{path:'Peter', formatter:'.formatter.formataData'} - {path:'Petur', formatter:'.formatter.formataHora'}"/>
+									</f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+			</IconTabFilter>
+			<IconTabFilter
+				text="{i18n>TextosLongos}"
+				key="kTextoLongo"
+				id="vTextoLongo">
+				<f:Form 
+					id="formTxtLongosMedida"
+					editable="false">
+					<f:layout>
+						<f:ResponsiveGridLayout
+							adjustLabelSpan="false"
+							singleContainerFullSize="false"
+							labelSpanXL="4"	labelSpanL="3" labelSpanM="8" labelSpanS="12"
+							emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0"
+							columnsXL="1"   columnsL="1"   columnsM="1"   />
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>	
+							<f:formElements>
+								<f:FormElement label="{i18n>TextoLongoRti}">
+									<f:fields>
+										<TextArea
+											editable="false"
+											growing="true"
+											growingMaxLines="7"
+											width="100%"
+											value="{mTextosLongos>/TextoLongoRti}"/>
+									</f:fields>
+								</f:FormElement>
+								<f:FormElement label="{i18n>TextoLongoAtiv}">
+									<f:fields>
+										<TextArea
+											editable="false"
+											growing="true"
+											growingMaxLines="7"
+											width="100%"
+											value="{mTextosLongos>/TextoLongoAtividade}"/>
+									</f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+			</IconTabFilter>
+		</items>
+		</IconTabBar>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button 
+					text="{i18n>AnexosSolic}"
+					press="onAnexosSolic"/>
+				<Button 
+					text="{i18n>AnexosRti}"
+					press="onAnexosRti"/>
+				<Button 
+					text="{i18n>Aprovar}"
+					type="Accept"
+					press="onAprovar"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

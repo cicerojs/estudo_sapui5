@@ -1,0 +1,164 @@
+<mvc:View
+	controllerName="br.com.petrobras.pm.yspm_medidas_b.controller.Worklist"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:semantic="sap.f.semantic"
+	xmlns:table="sap.ui.table.Table">
+	
+	<Page 
+		id="page"
+		title="{i18n>worklistTitle}"
+		showNavButton="false"
+		showFooter="true">
+		<content>
+			<VBox>
+				<Table
+				id="table"
+				width="auto"
+				items="{mMedidas>/Medidas}"
+				noDataText="{worklistView>/tableNoDataText}"
+				busyIndicatorDelay="{worklistView>/tableBusyDelay}"
+				growing="true"
+				growingScrollToLoad="true"
+				updateFinished=".onUpdateFinished"
+				mode="MultiSelect">
+				<headerToolbar>
+					<Toolbar>
+						<Title
+							id="tableHeader"
+							text="{worklistView>/worklistTableTitle}"
+							level="H3"/>
+						<ToolbarSpacer />
+						<Label text="{i18n>Centro}" />
+						<Input
+							id="inputCentro"
+							showValueHelp="true"
+							valueHelpOnly="true"
+							width='6rem'
+							valueHelpRequest="onSearchHelpCentro">
+						</Input>
+						<Text text="{mCentroModel>/Name1}" width="10rem" />
+						<Label text="{i18n>Instalacoes}" />
+						<Select
+							id="selectLocInstalacao"
+							width="12rem"
+							items="{mLocsInst>/LocsInst}">
+							<core:Item key="{mLocsInst>LocInstalacao}" text="{mLocsInst>DescLocInstalacao}" />
+						</Select>
+						<CheckBox 
+							id="chkTdsAtivos"
+							text="{i18n>TdsAtivos}" />
+						<Button
+							text="{i18n>Listar}"
+							press="onListar"
+							type="Emphasized"
+							/>
+					</Toolbar>
+				</headerToolbar>
+
+				<columns>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>Nota}" />
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center" width="10rem">
+						<Text text="{i18n>Parte}" />
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>RTI}" />
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>Classificacao}" />
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>NivelAprov}" />
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>DtCriacao}" />
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center" width="10rem">
+						<Text text="{i18n>TxtBrMoni}" />
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>NovoPrazoMoni}" />
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>QtdMoni}" width="3rem" />
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>FalhaTipoInterv}" />
+					</Column>
+				</columns>
+
+				<items>
+					<ColumnListItem
+						type="Navigation"
+						press=".onNavegarMedida">
+						<cells>
+							<ObjectIdentifier
+								text="{
+									path: 'mMedidas>Nota',
+									formatter: '.formatter.formataZerosEsquerda'
+									}"/>
+							<ObjectIdentifier
+								text="{
+									path: 'mMedidas>Item',
+									formatter: '.formatter.formataZerosEsquerda'} - {mMedidas>CodPartObj} - {mMedidas>TxtBreveCod}"/>
+							<ObjectIdentifier
+								text="{
+									path: 'mMedidas>NumMedida',
+									formatter: '.formatter.formataZerosEsquerda'
+									}"/>
+							<ObjectIdentifier
+								text="{mMedidas>YyclassifRti}"/>
+							<ObjectIdentifier
+								text="{mMedidas>NivelAprovacao}"/>
+							<ObjectIdentifier
+								text="{
+									path: 'mMedidas>Erdat',
+									type: 'sap.ui.model.type.Date',
+									formatOptions: {
+				        				 pattern: 'dd/MM/yyyy',
+				        				 UTC: true
+				        				}
+			        				}"/>
+							<ObjectIdentifier
+								text="{mMedidas>TxtAtividade}"/>
+							<ObjectIdentifier
+								text="{
+									path: 'mMedidas>NovoPrazoMoni',
+									type: 'sap.ui.model.type.Date',
+									formatOptions: {
+										pattern: 'dd/MM/yyyy',
+										UTC: true
+										}
+									}"/>
+							<ObjectIdentifier
+								text="{mMedidas>QtdMonitoracao}"/>
+							<ObjectIdentifier
+								text="{
+									path: 'mMedidas>YyimpactoFalhaNota',
+									formatter: '.formatter.formataNA'} / 
+									{path: 'mMedidas>YytipoIntervNota',
+									formatter: '.formatter.formataNA'}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			</VBox>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button
+					text="{i18n>RelInsp}"
+					type="Emphasized"
+				    press="onExibirRelInsp" />
+				<Button 
+					text="{i18n>Aprovar}"
+					type="Accept"
+					press="onAprovar"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

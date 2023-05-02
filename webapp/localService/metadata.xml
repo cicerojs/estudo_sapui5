@@ -1,0 +1,127 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="YSPM_PEMI_PEMIMEDIDA_SRV" xml:lang="pt" sap:schema-version="1">
+			<EntityType Name="Centro" sap:content-version="1">
+				<Key><PropertyRef Name="Werks"/></Key><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Centro" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="Sort2" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Termo pesq.2" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Sort1" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Termo pesq.1" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PostCode1" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Código postal"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="City1" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Cidade" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Name2" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Nome 2" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Nome" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Nation" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Versão endereço"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="LocaisInstalacao" Relationship="YSPM_PEMI_PEMIMEDIDA_SRV.Centro_LocalInstalacao"
+					FromRole="FromRole_Centro_LocalInstalacao" ToRole="ToRole_Centro_LocalInstalacao"/><NavigationProperty Name="Medidas" Relationship="YSPM_PEMI_PEMIMEDIDA_SRV.Centro_Medidas" FromRole="FromRole_Centro_Medidas"
+					ToRole="ToRole_Centro_Medidas"/></EntityType>
+			<EntityType Name="Medida" sap:content-version="1">
+				<Key><PropertyRef Name="Nota"/><PropertyRef Name="NumMedida"/><PropertyRef Name="Centro"/><PropertyRef Name="LocInstalacao"/></Key><Property Name="Nota" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Nota" sap:creatable="false"
+					sap:updatable="false" sap:filterable="false"/><Property Name="NumMedida" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Medida" sap:creatable="false"
+					sap:updatable="false" sap:filterable="false"/><Property Name="Centro" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Cen.localiz." sap:creatable="false"
+					sap:updatable="false"/><Property Name="LocInstalacao" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Loc.instalação"
+					sap:creatable="false" sap:updatable="false"/><Property Name="FlagTdsAtivos" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Flag para todos os ativos"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="StatMedida" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:label="Status PEMI Medida" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NumObj" Type="Edm.String" MaxLength="22" sap:unicode="false" sap:label="Nº objeto" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Item" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Item" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="TipoCatParte" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Tipo catálogo" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="GrpCodCat" Type="Edm.String" MaxLength="8" sap:unicode="false" sap:label="GrpCódigos" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CodPartObj" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Code parte obj." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TxtBreveCod" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Txt.breve code" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TipoErros" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Tipos de erros" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="GrpCodDano" Type="Edm.String" MaxLength="8" sap:unicode="false" sap:label="GrpCódigos" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CodDano" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Código do dano" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TxtBreveDano" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Txt.breve code" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TipoCatMedida" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Tipo catálogo" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="GrpCodMedida" Type="Edm.String" MaxLength="8" sap:unicode="false" sap:label="GrpCódigos" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CodMedida" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Código medidas" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TxtBreveMedida" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Txt.breve code" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TxtMedida" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Texto medidas" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FlagTxtMedida" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Txt.descritivo" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Parvw" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Funç.resp.med." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Parnr" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Responsável" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ernam" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Criado por" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Erdat" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Dt.criação" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Erzeit" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Criado às" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Aenam" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Modificado por" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Aedat" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Modificado em" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Aezeit" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Modificado às" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pster" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Início planej." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pstur" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Hora planejada" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Peter" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Fim planejado" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Petur" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Hora plan.concl" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Erlnam" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Concluído por" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Erldat" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Concluída em" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Erlzeit" Type="Edm.Time" Precision="0" sap:unicode="false" sap:label="Hora conclusão" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Urnum" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Causa" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Kzloesch" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Eliminar" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Qsmnum" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Nº de ordenação" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Yyaufnr" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Ordem" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="YyclassifRti" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Classificação RTI" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PrueflosNota" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Lote controle" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="EqunrNota" Type="Edm.String" MaxLength="18" sap:unicode="false" sap:label="Equipamento" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="EqktxEqunrNota" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Denominação" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="KltxtEqunrNota" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Denominação" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TplnrNota" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Loc.instalação" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PltxtTplnrNota" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Denominação" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="KltxtTplnrNota" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Denominação" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="EqfnrNota" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Campo seleção" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="RbnrNota" Type="Edm.String" MaxLength="9" sap:unicode="false" sap:label="Perf.catálogo" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="IngrpNota" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Grp.plnj.PM" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="YyimpactoFalhaNota" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Impacto da Falha" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="YytipoIntervNota" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Tip. Intervenção" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="YyrespAprov" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Respons aprovação" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="YydataAprov" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Data de aprovação" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="YyrespCsucs" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Respons aprovação" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="YydataCsucs" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Data de aprovação" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="YycaractsSoObjtecNota" Type="Edm.String" MaxLength="256" sap:unicode="false" sap:label="Descr SegOperacional"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="QtdMonitoracao" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Quantidade de ações de monitoramento"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NovoPrazoMoni" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Novo Prazo Monitoração"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TxtAtividade" Type="Edm.String" sap:unicode="false" sap:label="Texto das atividades" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="IdTxt" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Identificador de existencia de texto"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="NivelAprovacao" Type="Edm.String" sap:unicode="false" sap:label="Nivel de Aprovação" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="StatusDesc" Type="Edm.String" sap:unicode="false" sap:label="Status da Medida" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="StatusSap" Type="Edm.String" sap:unicode="false" sap:label="Status do SAP" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ResponsavelResp" Type="Edm.String" sap:unicode="false" sap:label="Texto do Responsavel" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LocalizacaoCod" Type="Edm.String" sap:unicode="false" sap:label="Codigo Localização" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LocalizacaoDesc" Type="Edm.String" sap:unicode="false" sap:label="Descrição da Localização" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="Centros" Relationship="YSPM_PEMI_PEMIMEDIDA_SRV.Centro_Medidas" FromRole="ToRole_Centro_Medidas"
+					ToRole="FromRole_Centro_Medidas"/><NavigationProperty Name="LocalInstalacao" Relationship="YSPM_PEMI_PEMIMEDIDA_SRV.LocalInstalacao_Medida"
+					FromRole="ToRole_LocalInstalacao_Medida" ToRole="FromRole_LocalInstalacao_Medida"/></EntityType>
+			<EntityType Name="LocalInstalacao" sap:content-version="1">
+				<Key><PropertyRef Name="Werks"/><PropertyRef Name="LocInstalacao"/></Key><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Centro" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="LocInstalacao" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Loc.instalação"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="DescLocInstalacao" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="Medidas" Relationship="YSPM_PEMI_PEMIMEDIDA_SRV.LocalInstalacao_Medida" FromRole="FromRole_LocalInstalacao_Medida"
+					ToRole="ToRole_LocalInstalacao_Medida"/><NavigationProperty Name="Centro" Relationship="YSPM_PEMI_PEMIMEDIDA_SRV.Centro_LocalInstalacao" FromRole="ToRole_Centro_LocalInstalacao"
+					ToRole="FromRole_Centro_LocalInstalacao"/></EntityType>
+			<Association Name="Centro_LocalInstalacao" sap:content-version="1"><End Type="YSPM_PEMI_PEMIMEDIDA_SRV.Centro" Multiplicity="1" Role="FromRole_Centro_LocalInstalacao"/><End Type="YSPM_PEMI_PEMIMEDIDA_SRV.LocalInstalacao" Multiplicity="*" Role="ToRole_Centro_LocalInstalacao"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Centro_LocalInstalacao"><PropertyRef Name="Werks"/></Principal>
+					<Dependent Role="ToRole_Centro_LocalInstalacao"><PropertyRef Name="Werks"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Centro_Medidas" sap:content-version="1"><End Type="YSPM_PEMI_PEMIMEDIDA_SRV.Centro" Multiplicity="1" Role="FromRole_Centro_Medidas"/><End Type="YSPM_PEMI_PEMIMEDIDA_SRV.Medida" Multiplicity="*" Role="ToRole_Centro_Medidas"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Centro_Medidas"><PropertyRef Name="Werks"/></Principal>
+					<Dependent Role="ToRole_Centro_Medidas"><PropertyRef Name="Centro"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="LocalInstalacao_Medida" sap:content-version="1"><End Type="YSPM_PEMI_PEMIMEDIDA_SRV.LocalInstalacao" Multiplicity="1" Role="FromRole_LocalInstalacao_Medida"/><End Type="YSPM_PEMI_PEMIMEDIDA_SRV.Medida" Multiplicity="*" Role="ToRole_LocalInstalacao_Medida"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_LocalInstalacao_Medida"><PropertyRef Name="Werks"/><PropertyRef Name="LocInstalacao"/></Principal>
+					<Dependent Role="ToRole_LocalInstalacao_Medida"><PropertyRef Name="Centro"/><PropertyRef Name="LocInstalacao"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="YSPM_PEMI_PEMIMEDIDA_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="Centros" EntityType="YSPM_PEMI_PEMIMEDIDA_SRV.Centro" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="Medidas" EntityType="YSPM_PEMI_PEMIMEDIDA_SRV.Medida" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="LocaisInstalacao" EntityType="YSPM_PEMI_PEMIMEDIDA_SRV.LocalInstalacao" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<AssociationSet Name="Centros_Medidas" Association="YSPM_PEMI_PEMIMEDIDA_SRV.Centro_Medidas" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="Centros" Role="FromRole_Centro_Medidas"/><End EntitySet="Medidas" Role="ToRole_Centro_Medidas"/></AssociationSet>
+				<AssociationSet Name="Centro_LocaisInstalacao" Association="YSPM_PEMI_PEMIMEDIDA_SRV.Centro_LocalInstalacao" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="Centros" Role="FromRole_Centro_LocalInstalacao"/><End EntitySet="LocaisInstalacao" Role="ToRole_Centro_LocalInstalacao"/></AssociationSet>
+				<AssociationSet Name="LocaisInstalacao_Medidas" Association="YSPM_PEMI_PEMIMEDIDA_SRV.LocalInstalacao_Medida" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="LocaisInstalacao" Role="FromRole_LocalInstalacao_Medida"/><End EntitySet="Medidas" Role="ToRole_LocalInstalacao_Medida"/></AssociationSet>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/YSPM_PEMI_PEMIMEDIDA_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/YSPM_PEMI_PEMIMEDIDA_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

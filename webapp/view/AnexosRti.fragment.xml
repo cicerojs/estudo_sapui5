@@ -1,0 +1,40 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog
+		id="dialogAnexosRti"
+		title="{i18n>AnexosRti}">
+		<content>
+			<Table
+				id="tbAnexosRti"
+				noDataText="{i18n>semAnexos}"
+				growing="true"
+				growingScrollToLoad="true"
+				items="{mAnexosRti>/AnexosRti}">
+				<columns>
+					<column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>nomeAnexo}"/>
+					</column>
+					<column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>autorAnexo}"/>
+					</column>
+					<column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" hAlign="Center">
+						<Text text="{i18n>dataAnexo}"/>
+					</column>
+				</columns>
+				<ColumnListItem
+					type="Active"
+					press="onSelecionarAnexoRti">
+					<cells>
+						<Text text="{mAnexosRti>Descricao}"/>
+						<Text text="{mAnexosRti>SapNam}"/>
+						<Text text="{mAnexosRti>DtCriacao}"/>
+					</cells>
+				</ColumnListItem>
+			</Table>
+		</content>
+		<beginButton>
+            <Button text="Fechar" press="onFecharDialogAnexos"/>
+        </beginButton>
+	</Dialog>
+</core:FragmentDefinition>
